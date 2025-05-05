@@ -9,7 +9,6 @@ public class Customer extends User {
         super(id,name,email);
         this.deliveryAddress = deliveryAddress;
         shoppingCart = new ArrayList<>();
-
     }
     @Override
     public void showDetails() {

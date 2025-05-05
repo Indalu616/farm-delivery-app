@@ -9,6 +9,4 @@ public class Product {
     private int quantityAvailable;
     private Date harvestDate;
 
-
-
 }
