@@ -40,7 +40,12 @@ public class Product {
     }
 
     public void setPrice(int price) {
-        this.price = price;
+        if(price > 0){
+            this.price = price;
+        }
+        else{
+            throw new IllegalArgumentException("Price has to be greater than 0");
+        }
     }
 
     public String getDescription() {
@@ -64,6 +69,11 @@ public class Product {
     }
 
     public void setHarvestDate(LocalDate harvestDate) {
-        this.harvestDate = harvestDate;
+        if(harvestDate.isAfter(LocalDate.now())){
+            this.harvestDate = harvestDate;
+        }
+        else{
+            throw new IllegalArgumentException("Harvest date has to be after today(in the future)");
+        }
     }
 }

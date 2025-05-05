@@ -10,6 +10,26 @@ public class Customer extends User {
         this.deliveryAddress = deliveryAddress;
         shoppingCart = new ArrayList<>();
     }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        if(deliveryAddress == null || deliveryAddress.trim().equals("")){
+            throw new IllegalArgumentException("Delivery address can't be empty");
+        }
+        this.deliveryAddress = deliveryAddress;
+    }
+
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public ArrayList<Product> getShoppingCart() {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(ArrayList<Product> shoppingCart) {
+        this.shoppingCart = shoppingCart;
+    }
+
     @Override
     public void showDetails() {
         System.out.println("Name: " + this.getName() + " ID: " + this.getId() + " Email: " + this.getEmail() + " Address: " + deliveryAddress);
