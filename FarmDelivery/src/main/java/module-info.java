@@ -5,4 +5,6 @@ module org.example.farmdelivery {
 
     opens org.example.farmdelivery to javafx.fxml;
     exports org.example.farmdelivery;
+    exports app;
+    opens app to javafx.fxml;
 }
