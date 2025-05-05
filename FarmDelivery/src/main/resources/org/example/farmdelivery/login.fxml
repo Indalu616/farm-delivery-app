@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.farmdelivery.LoginController"
+            prefHeight="800" prefWidth="1200">
+<HBox AnchorPane.topAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20">
+       <VBox HBox.hgrow="ALWAYS" styleClass="left-section">
+              <HBox alignment="CENTER">
+                <Label text="Welcome To Farm Delivery" styleClass="farm-delivery-header">
+                     <HBox.margin>
+                          <Insets bottom="20" top="60"/>
+                     </HBox.margin>
+                </Label>
+              </HBox>
+
+              <HBox alignment="CENTER">
+                <Label text="Delivering Freshness to Your Doorstep" styleClass="tagline">
+                    <HBox.margin>
+                        <Insets bottom="40"/>
+                    </HBox.margin>
+                </Label>
+              </HBox>
+
+           <HBox alignment="CENTER">
+               <VBox style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 20, 0.5, 4, 4); -fx-background-radius: 20; -fx-padding: 10;">
+                   <ImageView>
+                       <Image url="@/org/example/farmdelivery/images/farm_logo.jpg" />
+                       <fitWidth>300</fitWidth>
+                       <fitHeight>400</fitHeight>
+
+                   </ImageView>
+               </VBox>
+
+           </HBox>
+               <HBox alignment="CENTER">
+                   <Button text="Create Account" styleClass="create-account-btn">
+                          <HBox.margin>
+                            <Insets bottom="20" top="40"/>
+                          </HBox.margin>
+                     </Button>
+               </HBox>
+
+        </VBox>
+
+        <VBox alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="right-section">
+                <HBox alignment="CENTER">
+                    <Label text="Farm Delivery Login" styleClass="login-section-header">
+                        <HBox.margin>
+                            <Insets bottom="60"/>
+                        </HBox.margin>
+                    </Label>
+                </HBox>
+
+               <HBox alignment="CENTER">
+                    <Label text="Username" >
+                        <HBox.margin>
+                            <Insets bottom="30" right="20"/>
+                        </HBox.margin>
+                    </Label>
+                   <TextField fx:id="usernameField" promptText="Username">
+                          <HBox.margin>
+                            <Insets bottom="30"/>
+                          </HBox.margin>
+                   </TextField>
+
+               </HBox>
+                <HBox alignment="CENTER">
+                    <Label text="Password" >
+                        <HBox.margin>
+                            <Insets bottom="30" right="20"/>
+                        </HBox.margin>
+                    </Label>
+                    <PasswordField fx:id="passwordField" promptText="Password">
+                        <HBox.margin>
+                            <Insets bottom="30"/>
+                        </HBox.margin>
+                    </PasswordField>
+                </HBox>
+                <HBox alignment="CENTER">
+                    <Button text="Login" onAction="#handleLoginButtonAction" styleClass="login-btn" prefWidth="200"/>
+                </HBox>
+
+        </VBox>
+</HBox>
+</AnchorPane>

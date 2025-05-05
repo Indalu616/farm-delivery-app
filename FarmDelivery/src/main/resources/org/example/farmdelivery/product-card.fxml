@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<HBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.farmdelivery.ProductCard" spacing="10"
+            prefHeight="100" prefWidth="200" styleClass="product-card">
+
+
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
+
+
+        <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <Image url="@/org/example/farmdelivery/images/img1.jpg"/>
+        </ImageView>
+        <Label fx:id="productName" text="Product Name" styleClass="product-name-label">
+            <VBox.margin>
+                <Insets top="20.0" bottom="10.0"/>
+            </VBox.margin>
+        </Label>
+        <Label fx:id="productPrice" text="\$19.99" styleClass="product-price-label">
+            <VBox.margin>
+                <Insets top="10.0"/>
+            </VBox.margin>
+        </Label>
+
+        <Button text="Add to Cart" styleClass="add-to-cart-button">
+            <VBox.margin>
+                <Insets top="20.0"/>
+            </VBox.margin>
+        </Button>
+    </VBox>
+</HBox>

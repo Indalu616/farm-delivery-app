@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.FlowPane?>
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.farmdelivery.ShoppingController"
+            prefHeight="800" prefWidth="1200">
+
+    <VBox spacing="10" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20" styleClass="product-list-page">
+
+        <HBox alignment="CENTER" styleClass="product-list-header">
+            <Label text="SHOPPING LIST" styleClass="title"/>
+        </HBox>
+
+        <HBox spacing="10">
+            <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button text="View Cart" onAction="#handleViewCart" prefHeight="40"/>
+        </HBox>
+<!--     combobox to filter products of different Catgories-->
+        <HBox spacing="10" styleClass="filter-section">
+            <HBox.margin>
+                <Insets top="40" bottom="40"/>
+            </HBox.margin>
+            <Label text="Filter by Product:"/>
+            <ComboBox fx:id="productComboBox" promptText="All" prefHeight="30"/>
+        <HBox spacing="10">
+            <Label text="Filter by Category:"/>
+            <ComboBox fx:id="categoryComboBox" promptText="All" prefHeight="30"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Sort by Price:"/>
+            <ComboBox fx:id="sortComboBox" promptText="Low to High" prefHeight="30"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Search:"/>
+            <ComboBox fx:id="searchComboBox" promptText="Search" prefHeight="30"/>
+        </HBox>
+        <HBox spacing="10">
+            <Label text="Sort by Name:"/>
+            <ComboBox fx:id="sortNameComboBox" promptText="A-Z" prefHeight="30"/>
+        </HBox>
+        </HBox>
+
+        <!--scroll section -->
+        <HBox >
+            <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true" fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
+               <FlowPane fx:id="productList" hgap="10" vgap="10" prefHeight="800">
+                    <!-- Product cards will be added here dynamically -->
+                </FlowPane>
+                <HBox.margin>
+                    <Insets top="40"/>
+                </HBox.margin>
+            </ScrollPane>
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
