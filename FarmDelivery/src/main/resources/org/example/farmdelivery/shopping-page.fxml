@@ -27,13 +27,14 @@
             </HBox.margin>
             </Label>
             <Pane HBox.hgrow="ALWAYS"/>
+            <!-- temporary button to navigate to dashboard -->
 
-        <HBox>
-    <Button text="Farmer Dashboard" onAction="#handleHome" />
-    <HBox.margin>
-        <Insets bottom="80"/>
-    </HBox.margin>
-</HBox>
+            <HBox>
+                <Button text="Farmer DashBoard" onAction="#handleDashBoard" />
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
             <HBox>
                 <Button text="Orders" onAction="#handleProducts" />
                 <HBox.margin>
@@ -46,29 +47,20 @@
                     <Insets bottom="80"/>
                 </HBox.margin>
             </HBox>
-            <HBox>
-                <Button text="View Cart" onAction="#handleCart" />
-                <HBox.margin>
-                    <Insets bottom="80"/>
-                </HBox.margin>
-            </HBox>
+
+
+        <HBox spacing="10">
+            <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
+            <Pane HBox.hgrow="ALWAYS" />
+            <Button text="View Cart" onAction="#handleViewCart" prefHeight="40"/>
+
+        </HBox>
             <HBox>
                 <Button text="Logout" onAction="#handleLogout" />
                 <HBox.margin>
                     <Insets bottom="80"/>
                 </HBox.margin>
             </HBox>
-
-<<<<<<< HEAD
-        <HBox spacing="10">
-            <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
-            <Pane HBox.hgrow="ALWAYS" />
-            <Button text="View Cart" onAction="#handleViewCart" prefHeight="40"/>
-
-            <!-- temporary button to navigate to dashboard -->
-            <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>
-=======
->>>>>>> 2d282f805c369c30b1656550d77a7757769f781e
         </HBox>
 <!--        shopping page banner-->
         <VBox alignment="CENTER" styleClass="banner">
