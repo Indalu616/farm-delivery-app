@@ -3,12 +3,19 @@ package org.example.farmdelivery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+<<<<<<< HEAD
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
+=======
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+>>>>>>> 2d282f805c369c30b1656550d77a7757769f781e
 import javafx.scene.layout.FlowPane;
 
 import java.io.IOException;
@@ -20,6 +27,12 @@ import javafx.stage.Stage;
 
 public class ShoppingController {
     public FlowPane productList;
+    public ComboBox categoryComboBox;
+    public ComboBox sortComboBox;
+    public ComboBox searchComboBox;
+    public ComboBox sortNameComboBox;
+    public Button searchButton;
+    public TextField searchBox;
 
     private ArrayList<Product> products=new ArrayList<>();
     Product product=new Product("Cherry Tomato",
@@ -45,6 +58,9 @@ public class ShoppingController {
         products.add(product2);
         products.add(product3);
         products.add(product4);
+        categoryComboBox.getItems().addAll("All","Milk Products","Fruits","Vegetables","Cereal Products");
+        sortComboBox.getItems().addAll("Descending","Ascending");
+
 
         for (Product product : products) {
           try {
@@ -72,6 +88,7 @@ public class ShoppingController {
     }
 
 
+<<<<<<< HEAD
     @FXML
     private void handleDashBoard(ActionEvent event) throws IOException, IOException {
         BorderPane dashboardRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/farmer-dashboard.fxml")));
@@ -85,5 +102,20 @@ public class ShoppingController {
         stage.setScene(dashboardScene);
         stage.setTitle("Dashboard");
         stage.show();
+=======
+    public void handleHome(ActionEvent actionEvent) {
+    }
+
+    public void handleProducts(ActionEvent actionEvent) {
+    }
+
+    public void handleCart(ActionEvent actionEvent) {
+    }
+
+    public void handleProfile(ActionEvent actionEvent) {
+    }
+
+    public void handleLogout(ActionEvent actionEvent) {
+>>>>>>> 2d282f805c369c30b1656550d77a7757769f781e
     }
 }

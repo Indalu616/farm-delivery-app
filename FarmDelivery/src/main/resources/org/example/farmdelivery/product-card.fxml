@@ -8,20 +8,25 @@
 <HBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.ProductCard" spacing="10"
-            prefHeight="100" prefWidth="200" styleClass="product-card">
+            prefHeight="100" prefWidth="300" styleClass="product-card">
 
 
     <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
 
 
-        <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fx:id="productImage" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
             <Image url="@/org/example/farmdelivery/images/img1.jpg"/>
         </ImageView>
+
         <Label fx:id="productName" text="Product Name" styleClass="product-name-label">
             <VBox.margin>
                 <Insets top="20.0" bottom="10.0"/>
             </VBox.margin>
         </Label>
+<!--        product description-->
+       <Label wrapText="true"  fx:id="productDescription" text="Proudly grown in UAE. Feel the emotion of freshness with our fresh products" styleClass="product-description">
+
+       </Label>
         <Label fx:id="productPrice" text="\$19.99" styleClass="product-price-label">
             <VBox.margin>
                 <Insets top="10.0"/>
