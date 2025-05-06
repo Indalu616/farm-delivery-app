@@ -29,11 +29,10 @@
             <Pane HBox.hgrow="ALWAYS"/>
 
         <HBox>
-    <Button text="Farmer Dashboard" onAction="#handleHome" />
-    <HBox.margin>
+            <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>    <HBox.margin>
         <Insets bottom="80"/>
     </HBox.margin>
-</HBox>
+    </HBox>
             <HBox>
                 <Button text="Orders" onAction="#handleProducts" />
                 <HBox.margin>
@@ -58,14 +57,6 @@
                     <Insets bottom="80"/>
                 </HBox.margin>
             </HBox>
-
-        <HBox spacing="10">
-            <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
-            <Pane HBox.hgrow="ALWAYS" />
-            <Button text="View Cart" onAction="#handleViewCart" prefHeight="40"/>
-
-            <!-- temporary button to navigate to dashboard -->
-            <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>
         </HBox>
 <!--        shopping page banner-->
         <VBox alignment="CENTER" styleClass="banner">

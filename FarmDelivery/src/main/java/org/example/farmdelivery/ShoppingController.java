@@ -91,7 +91,7 @@ public class ShoppingController {
         BorderPane dashboardRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/farmer-dashboard.fxml")));
         Scene dashboardScene = new Scene(dashboardRoot);
 
-        String dashboardCss = getClass().getResource("/org/example/farmdelivery/styles.css").toExternalForm();
+        String dashboardCss = getClass().getResource("/org/example/farmdelivery/dashboard.css").toExternalForm();
         dashboardScene.getStylesheets().add(dashboardCss);
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
