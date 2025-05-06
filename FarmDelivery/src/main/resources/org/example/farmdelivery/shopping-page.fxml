@@ -120,7 +120,6 @@
                 </HBox.margin>
             </ScrollPane>
         </HBox>
-
     </VBox>
 
 </AnchorPane>

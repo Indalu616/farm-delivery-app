@@ -1,7 +1,5 @@
 package model;
 
-import org.example.farmdelivery.Product;
-
 import java.util.ArrayList;
 
 public class DeliverySystem {
