@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class DashboardController {
-
     @FXML
     public TextField productNameField;
     @FXML
@@ -29,6 +28,7 @@ public class DashboardController {
     public Button selectCalendar;
     @FXML
     public StackPane imageCalendarUploadBox;
+    public TableView productTable;
     @FXML
     private StackPane mainContent;
 

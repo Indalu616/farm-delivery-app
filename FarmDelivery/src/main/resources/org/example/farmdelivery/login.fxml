@@ -42,7 +42,7 @@
 
            </HBox>
                <HBox alignment="CENTER">
-                   <Button text="Create Account" styleClass="create-account-btn">
+                   <Button fx:id="createAccBtn" text="Create Account" styleClass="create-account-btn" onAction="#handleCreateAccount">
                           <HBox.margin>
                             <Insets bottom="20" top="40"/>
                           </HBox.margin>
@@ -51,8 +51,8 @@
 
         </VBox>
 
-        <VBox alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="right-section">
-                <HBox alignment="CENTER">
+        <VBox  fx:id="listOfFields" alignment="CENTER" HBox.hgrow="ALWAYS" styleClass="right-section">
+                <HBox fx:id="headerLogin" alignment="CENTER">
                     <Label text="Farm Delivery Login" styleClass="login-section-header">
                         <HBox.margin>
                             <Insets bottom="60"/>
@@ -60,8 +60,24 @@
                     </Label>
                 </HBox>
 
+
+            <HBox alignment="CENTER" fx:id="emailHBox">
+
+                <Label text="Email Acc" >
+                    <HBox.margin>
+                        <Insets bottom="30" right="20"/>
+                    </HBox.margin>
+                </Label>
+                <TextField fx:id="emailField" promptText="Email">
+                    <HBox.margin>
+                        <Insets bottom="30"/>
+                    </HBox.margin>
+                </TextField>
+            </HBox>
+
                <HBox alignment="CENTER">
-                    <Label text="Username" >
+
+                    <Label text="Username " >
                         <HBox.margin>
                             <Insets bottom="30" right="20"/>
                         </HBox.margin>
@@ -74,7 +90,7 @@
 
                </HBox>
                 <HBox alignment="CENTER">
-                    <Label text="Password" >
+                    <Label text="Password " >
                         <HBox.margin>
                             <Insets bottom="30" right="20"/>
                         </HBox.margin>
@@ -91,12 +107,13 @@
                         <Insets bottom="30" right="20"/>
                     </HBox.margin>
                 </Label>
-                <ComboBox fx:id="userType" promptText="Password" styleClass="user-type-combo">
+                <ComboBox fx:id="comboSelect" promptText="Select role" styleClass="user-type-combo">
                     <items>
-                        <FXCollections fx:factory="observableArrayList">
+                        <FXCollections  fx:factory="observableArrayList">
                             <String fx:value="Farmer" />
                             <String fx:value="Customer" />
                         </FXCollections>
+
                     </items>
                     <HBox.margin>
                         <Insets bottom="30"/>
@@ -104,7 +121,7 @@
                 </ComboBox>
             </HBox>
                 <HBox alignment="CENTER">
-                    <Button text="Login" onAction="#handleLoginButtonAction" styleClass="login-btn" prefWidth="200"/>
+                    <Button fx:id="loginAccBtn" text="Login" onAction="#handleLoginButtonAction" styleClass="login-btn" prefWidth="200"/>
                 </HBox>
 
         </VBox>

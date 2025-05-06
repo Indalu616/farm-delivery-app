@@ -14,6 +14,8 @@
             <TableColumn styleClass="columnAttribute" fx:id="priceColumn" text="Price" prefWidth="200"/>
             <TableColumn styleClass="columnAttribute" fx:id="actionColumn" text="Remove" prefWidth="200"/>
         </columns>
+
+
     </TableView>
 
 

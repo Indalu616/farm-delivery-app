@@ -75,6 +75,7 @@
 
 }
 
+
 .right-section TextField{
     -fx-padding: 10px;
     -fx-border-radius: 5px;
@@ -96,7 +97,7 @@
     -fx-background-color: #3e8e41;
 }
 
-.right-section PasswordField{
+.right-section PasswordField, .right-section emailField{
     -fx-padding: 10px;
     -fx-border-radius: 5px;
     -fx-border-color: #ccc;

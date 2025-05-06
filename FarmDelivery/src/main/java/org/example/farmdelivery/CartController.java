@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
+//import model.Produc;
 
 import java.util.ArrayList;
 

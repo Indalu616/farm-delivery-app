@@ -5,9 +5,8 @@ public class Customer extends User {
     private String deliveryAddress;
     private ArrayList<Product> shoppingCart;
 
-    public Customer(int id, String name, String email,String deliveryAddress){
+    public Customer(int id, String name, String email){
         super(id,name,email);
-        this.deliveryAddress = deliveryAddress;
         shoppingCart = new ArrayList<>();
     }
 
