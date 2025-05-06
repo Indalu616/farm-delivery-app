@@ -3,11 +3,20 @@ package org.example.farmdelivery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Objects;
+
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 public class ShoppingController {
     public FlowPane productList;
@@ -63,4 +72,18 @@ public class ShoppingController {
     }
 
 
+    @FXML
+    private void handleDashBoard(ActionEvent event) throws IOException, IOException {
+        BorderPane dashboardRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/farmer-dashboard.fxml")));
+        Scene dashboardScene = new Scene(dashboardRoot);
+
+        String dashboardCss = getClass().getResource("/org/example/farmdelivery/styles.css").toExternalForm();
+        dashboardScene.getStylesheets().add(dashboardCss);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        stage.setScene(dashboardScene);
+        stage.setTitle("Dashboard");
+        stage.show();
+    }
 }

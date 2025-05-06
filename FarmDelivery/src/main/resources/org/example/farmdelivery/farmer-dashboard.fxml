@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.farmdelivery.DashboardController"
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <top>
+        <StackPane styleClass="dashboardHeader">
+            <Label text="Farmer Dashboard" styleClass="dashboardTitle"/>
+        </StackPane>
+    </top>
+
+    <left>
+        <VBox spacing="10.0" prefWidth="200">
+            <padding>
+                <Insets top="20" right="5" bottom="10" left="5"/>
+            </padding>
+            <Button styleClass="dashBtn" text="Home" onAction="#showHome"/>
+            <Button styleClass="dashBtn" text="Upload Image" onAction="#showImageUploader"/>
+            <Button styleClass="dashBtn" text="Calendar" onAction="#showCalendar"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="dashVBox" spacing="10.0">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Dashboard Content" styleClass="dashboard-content"/>
+            <!-- Add your dashboard content here -->
+        </VBox>
+    </center>
+
+</BorderPane>

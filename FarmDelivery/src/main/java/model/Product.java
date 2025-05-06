@@ -17,7 +17,6 @@ public class Product {
         this.price = price;
         this.quantityAvailable = quantityAvailable;
         this.harvestDate = harvestDate;
-
     }
 
     public String getName() {

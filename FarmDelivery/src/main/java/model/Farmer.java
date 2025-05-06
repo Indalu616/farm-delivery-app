@@ -9,9 +9,11 @@ public class Farmer extends User {
         super(id,name,email);
     }
 
+
     public ArrayList<Product> getProductList() {
         return productList;
     }
+
     public void addProduct(Product product){
         productList.add(product);
     }
@@ -20,9 +22,9 @@ public class Farmer extends User {
         this.productList = productList;
     }
 
+
     @Override
     public void showDetails() {
         System.out.println("Name: " + this.getName() + " ID: " + this.getId() + " Email: " + this.getEmail());
     }
-
 }

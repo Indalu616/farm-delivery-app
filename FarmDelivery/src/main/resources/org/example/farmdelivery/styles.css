@@ -177,3 +177,66 @@
                    -fx-border-radius:0;
                    -fx-padding:0;
 }
+
+
+
+
+
+
+/* dashboard page styles */
+.root {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-background-color: white;
+}
+
+/* Header Label */
+.dashboard-content {
+    -fx-text-fill: #2E7D32;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+.dashboardHeader{
+    -fx-background-color: #388E3C;
+}
+.dashboardTitle{
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-min-width: 100%;
+ }
+
+/* Left Menu Buttons */
+.dashBtn {
+    -fx-background-color:white;
+    -fx-text-fill: black;
+    -fx-min-width: 190;
+    -fx-alignment: CENTER_LE;
+
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-border-radius: 0;
+    -fx-background-radius: 8;
+    -fx-padding: 10 16;
+}
+
+.dashBtn:hover {
+    /*-fx-background-color: #2E7D32;*/ /* darker on hover */
+}
+
+/* Main Content VBox */
+.dashVBox {
+    -fx-background-color: #E8F5E9;
+    -fx-padding: 20;
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-background-radius: 10;
+}
+
+.date-picker {
+    -fx-background-color: white;
+    -fx-border-color: #A5D6A7;
+    -fx-border-radius: 5;
+}
+
+

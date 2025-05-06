@@ -26,6 +26,9 @@
             <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
             <Pane HBox.hgrow="ALWAYS" />
             <Button text="View Cart" onAction="#handleViewCart" prefHeight="40"/>
+
+            <!-- temporary button to navigate to dashboard -->
+            <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>
         </HBox>
 <!--     combobox to filter products of different Catgories-->
         <HBox spacing="10" styleClass="filter-section">
