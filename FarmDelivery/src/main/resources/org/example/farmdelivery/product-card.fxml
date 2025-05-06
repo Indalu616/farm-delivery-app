@@ -33,7 +33,7 @@
             </VBox.margin>
         </Label>
 
-        <Button text="Add to Cart" styleClass="add-to-cart-button">
+    <Button text="Add to Cart" styleClass="add-to-cart-button" onAction="#addToCart">
             <VBox.margin>
                 <Insets top="20.0"/>
             </VBox.margin>

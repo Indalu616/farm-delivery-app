@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.example.farmdelivery.CartController"
+            prefHeight="400.0" prefWidth="600.0">
+<!--    this is cart summary page-->
+    <VBox spacing="10" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20" styleClass="cart-page">
+        <HBox alignment="CENTER" styleClass="nav-bar" spacing="20">
+            <Label text="UAE FARM" styleClass="nav-title">
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <HBox>
+                <Button text="Back" onAction="#handleDashBoard" prefHeight="40" styleClass="back-btn"/>
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
+        </HBox>
+        <HBox>
+            <Label text="Cart Summary" styleClass="cart-summary-title">
+                <HBox.margin>
+                    <Insets bottom="40" top="40"/>
+                </HBox.margin>
+
+        </Label>
+        </HBox>
+<!--        cart items container-->
+        <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true" fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
+            <FlowPane fx:id="cartContainer" hgap="10" vgap="10" prefHeight="900">
+                <!-- Product cards will be added here dynamically -->
+            </FlowPane>
+            <HBox.margin>
+                <Insets top="40"/>
+            </HBox.margin>
+        </ScrollPane>
+    </VBox>
+
+</AnchorPane>
