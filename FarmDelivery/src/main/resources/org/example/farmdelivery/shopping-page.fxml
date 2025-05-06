@@ -12,6 +12,8 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.ShoppingController"
@@ -77,11 +79,24 @@
 
         <HBox spacing="10">
             <Label text="Filter by Category:"/>
-            <ComboBox fx:id="categoryComboBox" promptText="All" />
+            <ComboBox fx:id="categoryComboBox" promptText="All" >
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="All" />
+                        <String fx:value="Milk Products" />
+                        <String fx:value="Fruits" />
+                        <String fx:value="Vegetables" />
+                        <String fx:value="Cereal Products" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
         </HBox>
         <HBox spacing="10">
             <Label text="Sort by Price:"/>
-            <ComboBox fx:id="sortComboBox" promptText="Low to High" />
+
+            <Button text="Increasing"  onAction="#sortInIncreasingPrice"/>
+            <Button text="Decreasing" onAction="#sortDecreasingPrice"/>
+
         </HBox>
         <HBox spacing="10">
             <Label text="Search:"/>
@@ -90,7 +105,7 @@
 
         </HBox>
         <HBox spacing="10">
-            <Button text="Search" fx:id="searchButton" />
+            <Button text="Search" fx:id="searchButton" onAction="#handleSearch"/>
         </HBox>
         </HBox>
 

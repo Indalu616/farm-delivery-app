@@ -6,6 +6,8 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.LoginController"
@@ -83,6 +85,24 @@
                         </HBox.margin>
                     </PasswordField>
                 </HBox>
+            <HBox alignment="CENTER">
+                <Label text="User Type: " >
+                    <HBox.margin>
+                        <Insets bottom="30" right="20"/>
+                    </HBox.margin>
+                </Label>
+                <ComboBox fx:id="userType" promptText="Password" styleClass="user-type-combo">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Farmer" />
+                            <String fx:value="Customer" />
+                        </FXCollections>
+                    </items>
+                    <HBox.margin>
+                        <Insets bottom="30"/>
+                    </HBox.margin>
+                </ComboBox>
+            </HBox>
                 <HBox alignment="CENTER">
                     <Button text="Login" onAction="#handleLoginButtonAction" styleClass="login-btn" prefWidth="200"/>
                 </HBox>

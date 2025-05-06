@@ -18,7 +18,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ShoppingController {
     public FlowPane productList;
@@ -30,22 +33,23 @@ public class ShoppingController {
     public TextField searchBox;
 
     private ArrayList<Product> products = new ArrayList<>();
+    private List<Product> searchedProducts=new ArrayList<>();
 
     Product product = new Product("Cherry Tomato",
             "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            20.00);
+            2.00);
     Product product1 = new Product("Strawberry",
             "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            20.00);
+            10.00);
     Product product2 = new Product("Blueberry",
             "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            20.00);
+            200.00);
     Product product3 = new Product("Blackberry",
             "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            20.00);
+            40.00);
     Product product4 = new Product("Raspberry",
             "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            20.00);
+            50.00);
 
     public void initialize() {
         productList.getChildren().clear();
@@ -54,29 +58,37 @@ public class ShoppingController {
         products.add(product2);
         products.add(product3);
         products.add(product4);
-        categoryComboBox.getItems().addAll("All", "Milk Products", "Fruits", "Vegetables", "Cereal Products");
-        sortComboBox.getItems().addAll("Descending", "Ascending");
 
-        for (Product product : products) {
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/product-card.fxml"));
-                HBox productCard = loader.load();
-                ProductCard controller = loader.getController();
-                controller.setProduct(product);
-                productList.getChildren().add(productCard);
-            } catch (Exception e) {
-                e.printStackTrace();
+        System.out.println(searchBox.getText());
+        if(!searchedProducts.isEmpty()){
+            for (int i=0;i<searchedProducts.size();i++) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/product-card.fxml"));
+                    HBox productCard = loader.load();
+                    ProductCard controller = loader.getController();
+                    controller.setProduct(searchedProducts.get(i));
+                    productList.getChildren().add(productCard);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }else{
+            for (int j=0;j<products.size();j++) {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/product-card.fxml"));
+                    HBox productCard = loader.load();
+                    ProductCard controller = loader.getController();
+                    controller.setProduct(products.get(j));
+                    productList.getChildren().add(productCard);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
+
     }
 
     @FXML
-    private Label welcomeText;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
 
     public void handleAddItem(ActionEvent actionEvent) {
         // Add item logic here
@@ -118,5 +130,36 @@ public class ShoppingController {
 
     public void handleLogout(ActionEvent actionEvent) {
         // Logout logic
+    }
+
+
+//    a method to search products by their Name
+    public void handleSearch(ActionEvent event) {
+        searchedProducts=products.stream().filter(product->product.getName().contains(searchBox.getText()))
+                .collect(Collectors.toList());
+        products.clear();
+        initialize();
+    }
+
+//    a method to sort products in increasing order of price
+    public void sortInIncreasingPrice(){
+
+//        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
+//        for(Product prod: products){
+//            System.out.println(prod.getPrice());
+//        }
+        productList.getChildren().clear();
+        initialize();
+    }
+    public void sortDecreasingPrice(){
+        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
+        System.out.println("Decreasing clicked");
+        for(Product prod: products){
+            System.out.println(prod.getPrice());
+        }
+        products.reversed();
+        productList.getChildren().clear();
+        initialize();
+
     }
 }
