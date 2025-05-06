@@ -3,7 +3,10 @@ package org.example.farmdelivery;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
@@ -11,6 +14,12 @@ import javafx.scene.layout.HBox;
 
 public class ShoppingController {
     public FlowPane productList;
+    public ComboBox categoryComboBox;
+    public ComboBox sortComboBox;
+    public ComboBox searchComboBox;
+    public ComboBox sortNameComboBox;
+    public Button searchButton;
+    public TextField searchBox;
 
     private ArrayList<Product> products=new ArrayList<>();
     Product product=new Product("Cherry Tomato",
@@ -36,6 +45,9 @@ public class ShoppingController {
         products.add(product2);
         products.add(product3);
         products.add(product4);
+        categoryComboBox.getItems().addAll("All","Milk Products","Fruits","Vegetables","Cereal Products");
+        sortComboBox.getItems().addAll("Descending","Ascending");
+
 
         for (Product product : products) {
           try {

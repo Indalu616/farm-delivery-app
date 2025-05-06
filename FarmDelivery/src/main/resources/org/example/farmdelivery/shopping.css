@@ -8,17 +8,17 @@
 }
 .product-list-page .nav-title{
     -fx-font-size: 30px;
-    -fx-text-fill: #333;
+    -fx-text-fill: green;
     -fx-font-weight: 700;
 
 }
 .product-list-page .banner{
-    -fx-background-color: #4CAF50;
+    -fx-background-color: red;
     -fx-padding: 20px;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
     -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.1),10,0.5,0,0);
-    -fx-background-image: url('https://i.pinimg.com/736x/c0/62/f6/c062f693afac26c19ddfc08383e1ee01.jpg');
+
     -fx-background-size: cover;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
@@ -58,6 +58,15 @@
     -fx-font-size: 16px;
     -fx-text-fill: #333;
 }
+.product-list-page HBox TextField{
+    -fx-background-color: #f2f2f2;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #ccc;
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
 .product-list-page HBox Button{
     -fx-background-color: #4CAF50;
     -fx-text-fill: white;
@@ -67,6 +76,11 @@
     -fx-margin-top: 20px;
     -fx-font-size: 16px;
 }
+
+.product-list-page HBox Button:hover{
+-fx-background-color:green;
+}
+
 
 .product-list-page ScrollPane{
       -fx-background-color:transparent;
@@ -84,4 +98,13 @@
                    -fx-background-radius:0;
                    -fx-border-radius:0;
                    -fx-padding:0;
+}
+
+/*Product card styles*/
+.product-card{
+-fx-background-color:#ffffff;
+-fx-padding:10px;
+-fx-border-radius:10px;
+-fx-background-radius:10px;
+-fx-effect:dropshadow(gaussian,rgba(0,0,0,0.1),10,0.5,0,0);
 }
