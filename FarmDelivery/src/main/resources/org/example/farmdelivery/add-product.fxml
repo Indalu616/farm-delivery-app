@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
 
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.DashboardController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="800.0" prefWidth="1200.0">
+
+    <ScrollPane fitToWidth="true"  styleClass="scrollPanelAdd" AnchorPane.topAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="0">
+        <VBox fx:id="addContent" spacing="14" style="-fx-background-color: #E8F5E9; -fx-border-color: transparent; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;"
+        layoutX="50" layoutY="30" AnchorPane.topAnchor="5" AnchorPane.leftAnchor="10">
+            <Label text="Add New Product" styleClass="addTitle"/>
+
+            <Label text="Product Name:" styleClass="nameLabel"/>
+            <TextField fx:id="productNameField" promptText="Enter product name"/>
+
+            <Label text="Description:" styleClass="decLabel"/>
+            <TextArea fx:id="descriptionField" promptText="Enter product description" prefRowCount="3"/>
+
+            <Label text="Select Calendar:" styleClass="decLabel"/>
+            <StackPane fx:id="imageCalendarUploadBox" alignment="CENTER_LEFT">
+                <Button fx:id="selectCalendar" text="Click to Select Date" onAction="#loadCalendarSelect"/>
+            </StackPane>
+            <Label text="Upload Product Image:" styleClass="uploadImageLabel"/>
+
+            <Button fx:id="uploadImageBtn" text="Click to Upload Image" onAction="#uploadImage"/>
+
+            <ImageView fx:id="imagePreview" fitWidth="400" fitHeight="200" preserveRatio="true"/>
+
+            <Button fx:id="addBtn" text="Add Product" styleClass="addBtn"/>
+
+            <padding><Insets top="20" left="20" right="20" bottom="20"/></padding>
+        </VBox>
+    </ScrollPane>
 
 
 </AnchorPane>

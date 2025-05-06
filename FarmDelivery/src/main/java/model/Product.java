@@ -8,6 +8,7 @@ public class Product {
     private String description;
     private int price;
     private int quantityAvailable;
+    private String imageUrl;
     private LocalDate harvestDate;
 
     public Product(String productId, String name, String description, int price, int quantityAvailable, LocalDate harvestDate){
@@ -25,6 +26,13 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public String getProductId() {
