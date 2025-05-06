@@ -17,10 +17,58 @@
             prefHeight="800" prefWidth="1200">
 
     <VBox spacing="10" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20" styleClass="product-list-page">
+<!--        I want to create nav bars here-->
+        <HBox alignment="CENTER" styleClass="nav-bar" spacing="20">
+            <Label text="UAE FARM" styleClass="nav-title">
 
-        <HBox alignment="CENTER" styleClass="product-list-header">
-            <Label text="SHOPPING LIST" styleClass="title"/>
+            <HBox.margin>
+                <Insets bottom="80"/>
+            </HBox.margin>
+            </Label>
+            <Pane HBox.hgrow="ALWAYS"/>
+
+        <HBox>
+    <Button text="Farmer Dashboard" onAction="#handleHome" />
+    <HBox.margin>
+        <Insets bottom="80"/>
+    </HBox.margin>
+</HBox>
+            <HBox>
+                <Button text="Orders" onAction="#handleProducts" />
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
+            <HBox>
+                <Button text="Profile" onAction="#handleProfile" />
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
+            <HBox>
+                <Button text="View Cart" onAction="#handleCart" />
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
+            <HBox>
+                <Button text="Logout" onAction="#handleLogout" />
+                <HBox.margin>
+                    <Insets bottom="80"/>
+                </HBox.margin>
+            </HBox>
+
         </HBox>
+<!--        shopping page banner-->
+        <VBox alignment="CENTER" styleClass="banner">
+            <Label text="Welcome to UAE  Farm Product Delivery App!" styleClass="banner-title"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+<!--            some text attention catching text-->
+            <Label text="Get the freshest produce delivered to your door!" styleClass="banner-text"/>
+            <HBox.margin>
+                <Insets bottom="50"/>
+            </HBox.margin>
+        </VBox>
 
         <HBox spacing="10">
             <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>

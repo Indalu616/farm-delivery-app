@@ -63,4 +63,18 @@ public class ShoppingController {
     }
 
 
+    public void handleHome(ActionEvent actionEvent) {
+    }
+
+    public void handleProducts(ActionEvent actionEvent) {
+    }
+
+    public void handleCart(ActionEvent actionEvent) {
+    }
+
+    public void handleProfile(ActionEvent actionEvent) {
+    }
+
+    public void handleLogout(ActionEvent actionEvent) {
+    }
 }
