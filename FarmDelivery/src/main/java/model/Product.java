@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.util.Date;
 
 public class Product {
-    private String productId;
+    private int productId;
     private String name;
     private String description;
     private int price;
@@ -11,15 +11,15 @@ public class Product {
     private String imageUrl;
     private LocalDate harvestDate;
 
-    public Product(String productId, String name, String description, int price, int quantityAvailable, LocalDate harvestDate){
+    public Product(int productId, String name, String description, int price, int quantityAvailable, LocalDate harvestDate,String imageUrl){
         this.productId = productId;
         this.name = name;
         this.description = description;
         this.price = price;
         this.quantityAvailable = quantityAvailable;
         this.harvestDate = harvestDate;
+        this.imageUrl=imageUrl;
     }
-
     public String getName() {
         return name;
     }
@@ -28,17 +28,17 @@ public class Product {
         this.name = name;
     }
     public String getImageUrl() {
-        return imageUrl;
+        return this.imageUrl;
     }
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
     }
 
-    public String getProductId() {
+    public int getProductId() {
         return productId;
     }
-    public void setProductId(String productId){
+    public void setProductId(int productId){
         this.productId = productId;
     }
 
@@ -58,6 +58,7 @@ public class Product {
     public String getDescription() {
         return description;
     }
+
 
     public void setDescription(String description) {
         this.description = description;

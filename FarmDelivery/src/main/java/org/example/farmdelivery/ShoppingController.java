@@ -1,5 +1,7 @@
 package org.example.farmdelivery;
 
+import model.Product;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,15 +17,16 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import model.ProductInventory;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.time.LocalDate;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ShoppingController {
+    ProductInventory productInventory=new ProductInventory();
+    private ArrayList<Product> displayProduct;
     public FlowPane productList;
     public ComboBox categoryComboBox;
     public ComboBox sortComboBox;
@@ -32,32 +35,37 @@ public class ShoppingController {
     public Button searchButton;
     public TextField searchBox;
 
-    private ArrayList<Product> products = new ArrayList<>();
+    private ArrayList<Product> products;
     private List<Product> searchedProducts=new ArrayList<>();
 
-    Product product = new Product("Cherry Tomato",
-            "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            2.00);
-    Product product1 = new Product("Strawberry",
-            "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            10.00);
-    Product product2 = new Product("Blueberry",
-            "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            200.00);
-    Product product3 = new Product("Blackberry",
-            "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            40.00);
-    Product product4 = new Product("Raspberry",
-            "https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg",
-            50.00);
+    private ArrayList<Product> decreasingList;
+    private String howToSort;
+
+//        this.productId = productId;
+//        this.name = name;
+//        this.description = description;
+//        this.price = price;
+//        this.quantityAvailable = quantityAvailable;
+//        this.harvestDate = harvestDate;
+//        this.imageUrl=imageUrl;
+    Product prod=new Product(1,"Cherry","Cherry is amazing",20,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+    Product prod1=new Product(2,"Tomato","Tomato is super sweet",21,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+    Product prod2=new Product(3,"Avocado","Avocado is amazing",100,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+    Product prod3=new Product(4,"Potato","Potato is amazing",28,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+    Product prod4=new Product(5,"StrawBerry","Strawberry is amazing",40,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+
 
     public void initialize() {
         productList.getChildren().clear();
-        products.add(product);
-        products.add(product1);
-        products.add(product2);
-        products.add(product3);
-        products.add(product4);
+        products= productInventory.getProductInventory();
+
+        if(howToSort!=null && howToSort.equals("increasing")){
+            displayProduct=productInventory.getIncreasinglySortedProducts();
+        } else if (howToSort!=null && howToSort.equals("decreasing")) {
+            displayProduct=productInventory.getDecreasingSortedProducts();
+        }else{
+            displayProduct=productInventory.getProductInventory();
+        }
 
         System.out.println(searchBox.getText());
         if(!searchedProducts.isEmpty()){
@@ -135,29 +143,20 @@ public class ShoppingController {
 
 //    a method to search products by their Name
     public void handleSearch(ActionEvent event) {
-        searchedProducts=products.stream().filter(product->product.getName().contains(searchBox.getText()))
+        searchedProducts=products.stream().filter(product->product.getName().toLowerCase().contains(searchBox.getText().toLowerCase()))
                 .collect(Collectors.toList());
-        products.clear();
+//        products.clear();
         initialize();
     }
 
 //    a method to sort products in increasing order of price
     public void sortInIncreasingPrice(){
-
-//        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
-//        for(Product prod: products){
-//            System.out.println(prod.getPrice());
-//        }
+         howToSort="increasing";
         productList.getChildren().clear();
         initialize();
     }
     public void sortDecreasingPrice(){
-        products.sort((p1, p2) -> Double.compare(p1.getPrice(), p2.getPrice()));
-        System.out.println("Decreasing clicked");
-        for(Product prod: products){
-            System.out.println(prod.getPrice());
-        }
-        products.reversed();
+        howToSort="decreasing";
         productList.getChildren().clear();
         initialize();
 
