@@ -1,7 +1,6 @@
 package org.example.farmdelivery;
 
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -14,11 +13,6 @@ public class DashboardController {
     @FXML
     private StackPane mainContent;
 
-    @FXML
-    private void loadHomeContent() {
-        Label homeLabel = new Label("Welcome to the Dashboard Home!");
-        mainContent.getChildren().setAll(homeLabel);
-    }
 
     @FXML
     private void loadUploadContent() {
@@ -28,12 +22,28 @@ public class DashboardController {
         mainContent.getChildren().setAll(uploadBox);
     }
 
-    public void showImageUploader(ActionEvent actionEvent) {
+    @FXML
+    private void showAddPage() {
+        Label addLabel = new Label("Add Product Page");
+        mainContent.getChildren().setAll(addLabel);
     }
 
-    public void showCalendar(ActionEvent actionEvent) {
+    @FXML
+    private void showProducts() {
+        Label productsLabel = new Label("List of Products");
+        mainContent.getChildren().setAll(productsLabel);
     }
 
-    public void showHome(ActionEvent actionEvent) {
+    @FXML
+    private void showOrders() {
+        Label ordersLabel = new Label("Order List");
+        mainContent.getChildren().setAll(ordersLabel);
     }
+
+    @FXML
+    private void showLogOut() {
+        Label logoutLabel = new Label("You are logged out.");
+        mainContent.getChildren().setAll(logoutLabel);
+    }
+
 }

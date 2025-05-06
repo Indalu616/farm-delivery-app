@@ -19,13 +19,14 @@
     </top>
 
     <left>
-        <VBox spacing="10.0" prefWidth="200">
+        <VBox  spacing="10.0" prefWidth="200">
             <padding>
-                <Insets top="20" right="5" bottom="10" left="5"/>
+                <Insets top="20" right="1" bottom="10" left="1"/>
             </padding>
-            <Button styleClass="dashBtn" text="Home" onAction="#showHome"/>
-            <Button styleClass="dashBtn" text="Upload Image" onAction="#showImageUploader"/>
-            <Button styleClass="dashBtn" text="Calendar" onAction="#showCalendar"/>
+            <Button styleClass="dashBtn" text="Add product" onAction="#showAddPage"/>
+            <Button styleClass="dashBtn" text="List products" onAction="#showProducts"/>
+            <Button styleClass="dashBtn" text="Orders" onAction="#showOrders"/>
+            <Button styleClass="dashBtn" text="Log out" onAction="#showLogOut"/>
         </VBox>
     </left>
 
@@ -34,8 +35,9 @@
             <padding>
                 <Insets top="10" right="10" bottom="10" left="10"/>
             </padding>
-            <Label text="Dashboard Content" styleClass="dashboard-content"/>
-            <!-- Add your dashboard content here -->
+            <StackPane fx:id="mainContent" styleClass="centerPane">
+                <Label text="Welcome to the Farmer Dashboard!" styleClass="welcomeLabel"/>
+            </StackPane>
         </VBox>
     </center>
 

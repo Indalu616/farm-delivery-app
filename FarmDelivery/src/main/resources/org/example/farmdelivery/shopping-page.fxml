@@ -59,7 +59,6 @@
                 </HBox.margin>
             </HBox>
 
-<<<<<<< HEAD
         <HBox spacing="10">
             <Button text="Add Item" onAction="#handleAddItem" prefHeight="40"/>
             <Pane HBox.hgrow="ALWAYS" />
@@ -67,8 +66,6 @@
 
             <!-- temporary button to navigate to dashboard -->
             <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>
-=======
->>>>>>> 2d282f805c369c30b1656550d77a7757769f781e
         </HBox>
 <!--        shopping page banner-->
         <VBox alignment="CENTER" styleClass="banner">
