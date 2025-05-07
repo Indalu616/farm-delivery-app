@@ -1,4 +1,5 @@
 package org.example.farmdelivery;
+import model.Cart;
 import model.Product;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,12 +21,11 @@ public class ProductCard {
        productDescription.setText(product.getDescription());
        Image image=new Image(product.getImageUrl());
        productImage.setImage(image);
+       addToCartButton.setUserData(product.getProductId());
     }
-    public void addToCart(ActionEvent actionEvent) throws IOException {
-        // Logic to add the product to the cart
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/cart.fxml"));
-        CartController controller = loader.getController();
-//        controller.addItemToCart(product);
+    public void addToCart(ActionEvent event) throws IOException {
+        int id = (int) ((Button) event.getSource()).getUserData();
+        Cart cart=new Cart();
+        cart.addToCartProducts(id);
     }
-
 }

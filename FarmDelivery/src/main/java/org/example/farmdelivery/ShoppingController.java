@@ -108,16 +108,8 @@ public class ShoppingController {
 
     @FXML
     private void handleDashBoard(ActionEvent event) throws IOException {
-        BorderPane dashboardRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/farmer-dashboard.fxml")));
-        Scene dashboardScene = new Scene(dashboardRoot);
+        handleLogout(event);
 
-        String dashboardCss = getClass().getResource("/org/example/farmdelivery/dashboard.css").toExternalForm();
-        dashboardScene.getStylesheets().add(dashboardCss);
-
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(dashboardScene);
-        stage.setTitle("Dashboard");
-        stage.show();
     }
 
     public void handleHome(ActionEvent actionEvent) {
@@ -128,15 +120,34 @@ public class ShoppingController {
         // Products button logic
     }
 
-    public void handleCart(ActionEvent actionEvent) {
+    public void handleCart(ActionEvent event) throws IOException {
         // Cart button logic
+        Parent cartRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/cart.fxml")));
+        Scene cartScene = new Scene(cartRoot);
+
+        String cartCss = getClass().getResource("/org/example/farmdelivery/cart.css").toExternalForm();
+        cartScene.getStylesheets().add(cartCss);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(cartScene);
+        stage.setTitle("Cart Summary");
+        stage.show();
     }
 
     public void handleProfile(ActionEvent actionEvent) {
         // Profile button logic
     }
 
-    public void handleLogout(ActionEvent actionEvent) {
+    public void handleLogout(ActionEvent actionEvent) throws IOException {
+        AnchorPane dashboardRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/login.fxml")));
+        Scene dashboardScene = new Scene(dashboardRoot);
+
+        String dashboardCss = getClass().getResource("/org/example/farmdelivery/styles.css").toExternalForm();
+        dashboardScene.getStylesheets().add(dashboardCss);
+
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(dashboardScene);
+        stage.setTitle("Login Page");
+        stage.show();
         // Logout logic
     }
 

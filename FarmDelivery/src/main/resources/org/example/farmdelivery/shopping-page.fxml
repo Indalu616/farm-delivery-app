@@ -31,7 +31,7 @@
             <Pane HBox.hgrow="ALWAYS"/>
 
         <HBox>
-            <Button text="DashBoard" onAction="#handleDashBoard" prefHeight="40"/>    <HBox.margin>
+            <Button text="Farmer Dashboard" onAction="#handleDashBoard" prefHeight="40"/>    <HBox.margin>
         <Insets bottom="80"/>
     </HBox.margin>
     </HBox>
