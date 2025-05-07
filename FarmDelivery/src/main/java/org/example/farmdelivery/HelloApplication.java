@@ -9,8 +9,8 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/org/example/farmdelivery/login.fxml"));
-        String loginCss = getClass().getResource("/org/example/farmdelivery/styles.css").toExternalForm();
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/org/example/farmdelivery/cart.fxml"));
+        String loginCss = getClass().getResource("/org/example/farmdelivery/cart.css").toExternalForm();
         Scene scene = new Scene(fxmlLoader.load());
         scene.getStylesheets().add(loginCss);
 

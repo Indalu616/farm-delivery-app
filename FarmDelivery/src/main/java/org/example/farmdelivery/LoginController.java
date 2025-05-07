@@ -18,7 +18,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 public class LoginController {
     public TextField usernameField;
     public PasswordField passwordField;
@@ -103,9 +102,6 @@ public class LoginController {
         writer.close();
     }
 
-
-
-
     public void handleCreateAccount(ActionEvent actionEvent) {
         if(!isSigningUp) {
             isSigningUp = true;
@@ -119,6 +115,5 @@ public class LoginController {
             loginAccBtn.setText("Login");
             createAccBtn.setText("Create Account");
         }
-
     }
 }
