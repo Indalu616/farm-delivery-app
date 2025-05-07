@@ -120,8 +120,17 @@ public class ShoppingController {
         // Products button logic
     }
 
-    public void handleCart(ActionEvent actionEvent) {
+    public void handleCart(ActionEvent event) throws IOException {
         // Cart button logic
+        Parent cartRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/cart.fxml")));
+        Scene cartScene = new Scene(cartRoot);
+
+        String cartCss = getClass().getResource("/org/example/farmdelivery/cart.css").toExternalForm();
+        cartScene.getStylesheets().add(cartCss);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(cartScene);
+        stage.setTitle("Cart Summary");
+        stage.show();
     }
 
     public void handleProfile(ActionEvent actionEvent) {
