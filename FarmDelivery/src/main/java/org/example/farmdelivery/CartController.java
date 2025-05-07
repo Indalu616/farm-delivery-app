@@ -9,6 +9,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
 import model.Cart;
+import model.MyCartProduct;
 import model.Product;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class CartController {
     public ImageView productImage;
 
     @FXML
-    private ArrayList<Product> cartProducts;
+    private ArrayList<MyCartProduct> cartProducts;
     @FXML
     public FlowPane cartContainer;
 
@@ -25,13 +26,12 @@ public class CartController {
     public void handleDashBoard(ActionEvent actionEvent) {
 
     }
-
     @FXML
     public void initialize(){
         Cart cart=new Cart();
         cartProducts=cart.getCartProducts();
         System.out.println(cartProducts.size());
-        for (Product product : cartProducts) {
+        for (MyCartProduct product : cartProducts) {
             try {
                 System.out.println("Product Name: "+product.getName());
                 System.out.println("Product Price: "+product.getPrice());
@@ -45,9 +45,9 @@ public class CartController {
             }
         }
     }
-    public void addItemToCart(Product product){
-        System.out.println("Product Name: "+product.getName());
-        System.out.println("Product Price: "+product.getPrice());
-        this.cartProducts.add(product);
-    }
+//    public void addItemToCart(Product product){
+//        System.out.println("Product Name: "+product.getName());
+//        System.out.println("Product Price: "+product.getPrice());
+//        this.cartProducts.add(product);
+//    }
 }

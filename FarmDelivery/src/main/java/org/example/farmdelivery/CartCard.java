@@ -3,7 +3,7 @@ package org.example.farmdelivery;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import model.Product;
+import model.MyCartProduct;
 
 public class CartCard {
     public ImageView productImage;
@@ -11,11 +11,11 @@ public class CartCard {
     public Label productPrice;
     public Label productQuantity;
 
-    public void setProductDetails(Product product){
+    public void setProductDetails(MyCartProduct product){
         productName.setText(product.getName());
-        productPrice.setText(product.getPrice() + " AED");
-        Image image=new Image(product.getImageUrl());
+        productPrice.setText("Total Price: "+product.getPrice() + " AED");
+        Image image=new Image(product.getImgUrl());
         productImage.setImage(image);
-        System.out.println("Product ID: "+product.getProductId());
+        System.out.println("Product ID: "+product.getId());
     }
 }
