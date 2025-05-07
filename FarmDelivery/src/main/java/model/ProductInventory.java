@@ -36,5 +36,13 @@ public ArrayList<Product> getDecreasingSortedProducts(){
     productInventory.sort((p1,p2)->Double.compare(p2.getPrice(),p1.getPrice()));
     return productInventory;
 }
+public Product getProduct(int productId){
+        for(Product prod:productInventory){
+            if(prod.getProductId()==productId){
+                return prod;
+            }
+        }
+        return null;
+}
 
 }

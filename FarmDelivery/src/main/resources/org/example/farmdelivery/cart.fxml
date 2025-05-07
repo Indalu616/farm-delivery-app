@@ -7,10 +7,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.CartController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="800.0" prefWidth="1200.0">
 <!--    this is cart summary page-->
     <VBox spacing="10" AnchorPane.leftAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20" styleClass="cart-page">
         <HBox alignment="CENTER" styleClass="nav-bar" spacing="20">
@@ -21,29 +24,127 @@
             </Label>
             <Pane HBox.hgrow="ALWAYS"/>
             <HBox>
-                <Button text="Back" onAction="#handleDashBoard" prefHeight="40" styleClass="back-btn"/>
+                <Button text="Back" onAction="#handleDashBoard" prefHeight="40" styleClass="button"/>
                 <HBox.margin>
                     <Insets bottom="80"/>
                 </HBox.margin>
             </HBox>
         </HBox>
         <HBox>
-            <Label text="Cart Summary" styleClass="cart-summary-title">
+        <HBox  styleClass="order-info-section" prefWidth="400">
+             <HBox.margin>
+                 <Insets  left="40" right="40" top="40" />
+             </HBox.margin>
+            <VBox>
+            <Label text="Order Information" styleClass="cart-summary-title">
                 <HBox.margin>
-                    <Insets bottom="40" top="40"/>
+                    <Insets bottom="40"/>
                 </HBox.margin>
+            </Label>
+                <VBox>
+                    <Label text="Your Name">
+                        <VBox.margin>
+                            <Insets bottom="1" />
+                        </VBox.margin>
+                    </Label>
+                    <TextField promptText="Enter your name">
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </TextField>
+                    <Label text="Your Email">
+                        <VBox.margin>
+                            <Insets bottom="1" />
+                        </VBox.margin>
+                    </Label>
+                    <TextField promptText="Enter your Email">
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </TextField>
+                    <Label text="Your Address">
+                        <VBox.margin>
+                            <Insets bottom="1" />
+                        </VBox.margin>
+                    </Label>
+                    <TextField promptText="Enter your City">
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </TextField>
+                    <Label text="Your Phone Number">
+                        <VBox.margin>
+                            <Insets bottom="1" />
+                        </VBox.margin>
+                    </Label>
+                    <TextField promptText="Enter your Phone Number">
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </TextField>
+                    <Label text="Select Payment Method">
+                        <VBox.margin>
+                            <Insets bottom="1" />
+                        </VBox.margin>
+                    </Label>
+                    <ComboBox>
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Cash" />
+                                <String fx:value="Credit Card" />
+                                <String fx:value="Paypal" />
+                            </FXCollections>
+                        </items>
+                        <VBox.margin>
+                            <Insets bottom="20" />
+                        </VBox.margin>
+                    </ComboBox>
+                    <Button text="Complete Order" styleClass=".button">
 
-        </Label>
+                    </Button>
+                </VBox>
+            </VBox>
+
         </HBox>
 <!--        cart items container-->
-        <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true" fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="NEVER">
-            <FlowPane fx:id="cartContainer" hgap="10" vgap="10" prefHeight="900">
-                <!-- Product cards will be added here dynamically -->
-            </FlowPane>
-            <HBox.margin>
-                <Insets top="40"/>
-            </HBox.margin>
-        </ScrollPane>
+            <VBox HBox.hgrow="ALWAYS">
+                <Label text="Cart Summary" styleClass="cart-summary-title">
+                    <HBox.margin>
+                        <Insets bottom="40" top="40"/>
+                    </HBox.margin>
+
+                </Label>
+                <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true" fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="NEVER" styleClass="scroll-pane">
+                    <FlowPane fx:id="cartContainer" hgap="10" vgap="10" prefHeight="900" styleClass="viewport">
+                         Product cards will be added here dynamically
+                        <HBox styleClass="cart-card" HBox.hgrow="ALWAYS" prefWidth="600">
+                            <HBox>
+                                <ImageView fx:id="productImage" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                    <Image url="@/org/example/farmdelivery/images/img1.jpg"/>
+                                    <HBox.margin>
+                                        <Insets right="40" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <VBox>
+                                    <Label text="Product Name" styleClass="product-name">
+
+                                    </Label>
+                                    <Label text="Total Price: 40 AED" styleClass="product-price">
+
+                                    </Label>
+                                    <Label text="Quantity: 1" styleClass="product-qty">
+                                    </Label>
+                                </VBox>
+                            </HBox>
+                        </HBox>
+                    </FlowPane>
+                    <HBox.margin>
+                        <Insets top="40"/>
+                    </HBox.margin>
+                </ScrollPane>
+            </VBox>
+
+        </HBox>
     </VBox>
 
 </AnchorPane>
