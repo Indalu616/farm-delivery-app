@@ -1,4 +1,6 @@
 package model;
+import model.Exceptions.HarvestDateException;
+
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -76,12 +78,12 @@ public class Product {
         return harvestDate;
     }
 
-    public void setHarvestDate(LocalDate harvestDate) {
+    public void setHarvestDate(LocalDate harvestDate) throws HarvestDateException {
         if(harvestDate.isAfter(LocalDate.now())){
             this.harvestDate = harvestDate;
         }
         else{
-            throw new IllegalArgumentException("Harvest date has to be after today(in the future)");
+            throw new HarvestDateException("Harvest date has to be after today(in the future)");
         }
     }
 }

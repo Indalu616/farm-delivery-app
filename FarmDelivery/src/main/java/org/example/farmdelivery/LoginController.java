@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import model.Customer;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -31,6 +32,7 @@ public class LoginController {
     public Button createAccBtn;
     @FXML
     private ComboBox<String> comboSelect;
+    private String selectedRole = "Customer";  // default value
 
 
     @FXML
@@ -41,12 +43,11 @@ public class LoginController {
         String username = usernameField.getText();
         String password = passwordField.getText();
         String email = emailField.getText();
-        String selectedRole = comboSelect.getSelectionModel().getSelectedItem();
+        selectedRole = comboSelect.getSelectionModel().getSelectedItem();
 
 
 
         if (!isSigningUp && authenticate(username, password)){
-
            loadMainPage(selectedRole);
         }
         else if(isSigningUp){
@@ -61,13 +62,13 @@ public class LoginController {
     private void loadMainPage(String comboValue) throws IOException {
         FXMLLoader loader;
         String loginCss;
-        if(comboValue.equals("Farmer")){
+        if(comboValue != null && comboValue.equals("Farmer")){
             loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/farmer-dashboard.fxml"));
             loginCss = getClass().getResource("/org/example/farmdelivery/dashboard.css").toExternalForm();
         }
         else{
             loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/shopping-page.fxml"));
-            loginCss = getClass().getResource("/org/example/farmdelivery/styles.css").toExternalForm();
+            loginCss = getClass().getResource("/org/example/farmdelivery/shopping.css").toExternalForm();
         }
         Parent root = loader.load();
         // Set the new scene to the current stage
@@ -100,6 +101,7 @@ public class LoginController {
     private static void registerUser(String username, String password,String email) throws IOException {
         FileWriter writer = new FileWriter("C:\\Users\\DELL\\Documents\\Programming-files\\Java\\farm-delivery-app\\FarmDelivery\\src\\main\\resources\\org\\example\\farmdelivery\\data\\credentials.txt", true);
         writer.write(username + ":" + password + ":" + email + "\n");
+        Customer newCustomer = new Customer(0,username,email);
         writer.close();
     }
 

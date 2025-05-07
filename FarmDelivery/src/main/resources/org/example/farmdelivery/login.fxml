@@ -107,7 +107,7 @@
                         <Insets bottom="30" right="20"/>
                     </HBox.margin>
                 </Label>
-                <ComboBox fx:id="comboSelect" promptText="Select role" styleClass="user-type-combo">
+                <ComboBox fx:id="comboSelect" promptText="Customer" styleClass="user-type-combo">
                     <items>
                         <FXCollections  fx:factory="observableArrayList">
                             <String fx:value="Farmer" />
