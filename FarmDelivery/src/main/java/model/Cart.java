@@ -78,7 +78,7 @@ public class Cart {
     public void saveCartProducts(Product prod){
         String prodName=prod.getName();
         String prodDes=prod.getDescription();
-        int price=prod.getPrice();
+        int price=(int)prod.getPrice();
         int quantity=prod.getQuantityAvailable();
         String imageUrl=prod.getImageUrl();
         int prodId=prod.getProductId();
