@@ -53,6 +53,7 @@ public class Cart {
                     int prodId=Integer.parseInt(strArr[3]);
                     String imageUrl=strArr[4];
                     MyCartProduct myCartProduct=new MyCartProduct(prodName,imageUrl,prodQuantity,prodPrice,prodId);
+
                     cartProducts.add(myCartProduct);
                 }
             }

@@ -29,7 +29,6 @@ public class MyCartProduct {
     public int getQuantity() {
         return quantity;
     }
-
     public String getImgUrl() {
         return imgUrl;
     }
