@@ -22,14 +22,17 @@
     -fx-text-align: center;
 }
 .left-section .create-account-btn{
-    -fx-background-color: #4CAF50;
-    -fx-text-fill: white;
-    -fx-padding: 10px 20px;
-    -fx-border-radius: 5px;
-    -fx-cursor: hand;
-    -fx-margin-top: 20px;
-    -fx-font-size: 16px;
-    -font-weight: 500;
+-fx-background-color: #4CAF50;
+        -fx-text-fill: white;
+        -fx-font-size: 14px;
+        -fx-font-weight: bold;
+        -fx-padding: 10px 20px;
+        -fx-background-radius: 8px;
+        -fx-border-radius: 8px;
+        -fx-border-color: transparent;
+        -fx-cursor: hand;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+        -fx-transition: all 0.3s ease;
 }
 .left-section .create-account-btn:hover{
     -fx-background-color: #45a049;
@@ -57,13 +60,19 @@
 }
 
 .right-section .login-btn{
-    -fx-background-color: #4CAF50;
-    -fx-text-fill: white;
-    -fx-padding: 10px 20px;
-    -fx-border-radius: 5px;
-    -fx-cursor: hand;
-    -fx-margin-top: 20px;
-    -fx-font-size: 16px;
+-fx-background-color: #4CAF50;
+
+
+        -fx-text-fill: white;
+        -fx-font-size: 14px;
+        -fx-font-weight: bold;
+        -fx-padding: 10px 20px;
+        -fx-background-radius: 8px;
+        -fx-border-radius: 8px;
+        -fx-border-color: transparent;
+        -fx-cursor: hand;
+        -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 4, 0, 0, 2);
+        -fx-transition: all 0.3s ease;
 }
 .right-section .login-btn:hover{
     -fx-background-color: #45a049;

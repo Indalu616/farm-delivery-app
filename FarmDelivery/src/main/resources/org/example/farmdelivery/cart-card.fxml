@@ -11,8 +11,8 @@
 <HBox xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="org.example.farmdelivery.CartCard"
-            prefHeight="400.0" prefWidth="600.0" styleClass="cart-card">
-    <HBox styleClass="cart-card" HBox.hgrow="ALWAYS" prefWidth="600">
+            prefWidth="800.0" styleClass="cart-card">
+    <HBox styleClass="cart-card" HBox.hgrow="ALWAYS" prefWidth="800">
         <HBox>
             <ImageView fx:id="productImage" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                 <Image url="@/org/example/farmdelivery/images/img1.jpg"/>

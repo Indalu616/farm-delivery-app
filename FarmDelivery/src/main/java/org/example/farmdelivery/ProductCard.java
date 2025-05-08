@@ -19,8 +19,8 @@ public class ProductCard {
        productName.setText(product.getName());
        productPrice.setText(product.getPrice() + " AED");
        productDescription.setText(product.getDescription());
-       Image image=new Image(product.getImageUrl());
-       productImage.setImage(image);
+//       Image image=new Image(product.getImageUrl());
+//       productImage.setImage(image);
        addToCartButton.setUserData(product.getProductId());
     }
     public void addToCart(ActionEvent event) throws IOException {

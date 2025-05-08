@@ -163,7 +163,6 @@ public class ShoppingController {
         stage.setTitle("Cart Summary");
         stage.show();
     }
-
     public void handleProfile(ActionEvent actionEvent) {
         // Profile button logic
     }

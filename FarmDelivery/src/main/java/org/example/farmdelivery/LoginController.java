@@ -19,7 +19,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-
 public class LoginController {
     public TextField usernameField;
     public PasswordField passwordField;
@@ -44,7 +43,6 @@ public class LoginController {
         String password = passwordField.getText();
         String email = emailField.getText();
         selectedRole = comboSelect.getSelectionModel().getSelectedItem();
-
 
 
         if (!isSigningUp && authenticate(username, password)){
@@ -99,14 +97,11 @@ public class LoginController {
         }
 
     private static void registerUser(String username, String password,String email) throws IOException {
-        FileWriter writer = new FileWriter("C:\\Users\\DELL\\Documents\\Programming-files\\Java\\farm-delivery-app\\FarmDelivery\\src\\main\\resources\\org\\example\\farmdelivery\\data\\credentials.txt", true);
+        FileWriter writer = new FileWriter("C:\\Users\\DELL\\Desktop\\farm-delivery-app\\FarmDelivery\\src\\main\\resources\\org\\example\\farmdelivery\\data\\credentials.txt", true);
         writer.write(username + ":" + password + ":" + email + "\n");
         Customer newCustomer = new Customer(0,username,email);
         writer.close();
     }
-
-
-
 
     public void handleCreateAccount(ActionEvent actionEvent) {
         if(!isSigningUp) {
@@ -121,6 +116,5 @@ public class LoginController {
             loginAccBtn.setText("Login");
             createAccBtn.setText("Create Account");
         }
-
     }
 }

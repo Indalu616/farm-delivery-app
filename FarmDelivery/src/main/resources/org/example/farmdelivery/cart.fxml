@@ -108,35 +108,24 @@
         </HBox>
 <!--        cart items container-->
             <VBox HBox.hgrow="ALWAYS">
+                <HBox HBox.hgrow="ALWAYS">
                 <Label text="Cart Summary" styleClass="cart-summary-title">
                     <HBox.margin>
                         <Insets bottom="40" top="40"/>
                     </HBox.margin>
 
                 </Label>
+                    <Label text="Grand Total: AED 80" styleClass="grand-total" fx:id="grandTotal">
+                        <HBox.margin>
+                            <Insets bottom="40" top="40" left="40"/>
+                        </HBox.margin>
+                    </Label>
+
+                </HBox>
                 <ScrollPane HBox.hgrow="ALWAYS" fitToWidth="true" fitToHeight="true" vbarPolicy="NEVER" hbarPolicy="NEVER" styleClass="scroll-pane">
                     <FlowPane fx:id="cartContainer" hgap="10" vgap="10" prefHeight="900" styleClass="viewport">
 <!--                         Product cards will be added here dynamically-->
-                        <HBox styleClass="cart-card" HBox.hgrow="ALWAYS" prefWidth="600">
-                            <HBox>
-                                <ImageView fx:id="productImage" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                    <Image url="@/org/example/farmdelivery/images/img1.jpg"/>
-                                    <HBox.margin>
-                                        <Insets right="40" />
-                                    </HBox.margin>
-                                </ImageView>
-                                <VBox>
-                                    <Label text="Product Name" styleClass="product-name">
 
-                                    </Label>
-                                    <Label text="Total Price: 40 AED" styleClass="product-price">
-
-                                    </Label>
-                                    <Label text="Quantity: 1" styleClass="product-qty">
-                                    </Label>
-                                </VBox>
-                            </HBox>
-                        </HBox>
                     </FlowPane>
                     <HBox.margin>
                         <Insets top="40"/>
