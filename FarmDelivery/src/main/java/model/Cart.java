@@ -38,6 +38,7 @@ public class Cart {
     }
 
     public ArrayList<MyCartProduct> getCartProducts(){
+        System.out.println("Called");
 
         try(InputStream inputStream = getClass().getResourceAsStream("/files/cart.txt");
             BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));

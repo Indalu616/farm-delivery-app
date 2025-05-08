@@ -2,17 +2,21 @@
 /* Login page styles */
 .left-section{
     -fx-width: 50%;
-    -fx-background-color: #f0f0f0;
+
     -fx-display: flex;
     -fx-justify-content: center;
     -fx-align-items: center;
+
 }
 .left-section .farm-delivery-header{
-    -fx-font-size: 40px;
-    -fx-font-weight: 700;
-    -fx-text-fill: #333;
-    -fx-margin-bottom: 20px;
-    -fx-text-align: center;
+
+
+        -fx-font-size: 40px;
+        -fx-font-weight: bold;
+        -fx-text-fill: #343a40; /* Dark gray for contrast */
+        -fx-padding: 0 0 20 0;
+        -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.1, 0, 1);
+        -fx-alignment: center;
 }
 .left-section .tagline{
     -fx-font-size: 20px;
@@ -51,6 +55,8 @@
     -fx-background-color: #fff;
     -fx-background-radius: 10px;
     -fx-display: flex;
+
+      -fx-background-color: linear-gradient(to bottom right, #4facfe, #00f2fe);
 }
 .right-section .login-section-header{
     -fx-font-size: 30px;
@@ -61,7 +67,6 @@
 
 .right-section .login-btn{
 -fx-background-color: #4CAF50;
-
 
         -fx-text-fill: white;
         -fx-font-size: 14px;
@@ -78,13 +83,11 @@
     -fx-background-color: #45a049;
 }
 .right-section Label{
-    -fx-font-size: 16px;
-    -fx-text-fill: #666;
-    -fx-font-weight: 500;
+  -fx-text-fill: white;
+   -fx-font-size: 16px;
+  -fx-font-weight: bold;
 
 }
-
-
 .right-section TextField{
     -fx-padding: 10px;
     -fx-border-radius: 5px;
@@ -102,6 +105,9 @@
     -fx-font-size: 16px;
 
 }
+
+
+
 .right-section .login-btn:pressed{
     -fx-background-color: #3e8e41;
 }
@@ -135,6 +141,19 @@
     -fx-background-radius: 5px;
 
 
+}
+/*login inputs styles*/
+.right-section TextField,.right-section PasswordField,.right-section ComboBox {
+    -fx-background-color: white;
+    -fx-text-fill: #212529;
+    -fx-prompt-text-fill: #6c757d;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 10 14;
+    -fx-font-size: 14px;
+    -fx-effect: null;
 }
 /*Product card styles*/
 .product-card{

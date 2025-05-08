@@ -6,7 +6,7 @@ public class MyCartProduct {
     private String imgUrl;
     private int quantity;
     private int price;
-    MyCartProduct(String name,String imgUrl,int quantity,int price,int id){
+    public MyCartProduct(String name, String imgUrl, int quantity, int price, int id){
         this.name=name;
         this.imgUrl=imgUrl;
         this.quantity=quantity;
