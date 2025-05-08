@@ -15,7 +15,6 @@
             <TableColumn styleClass="columnAttribute" fx:id="actionColumn" text="Remove" prefWidth="200"/>
         </columns>
 
-
     </TableView>
 
 

@@ -153,8 +153,12 @@ public class ShoppingController {
 
     public void handleCart(ActionEvent event) throws IOException {
         // Cart button logic
-        Parent cartRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/cart.fxml")));
-        Scene cartScene = new Scene(cartRoot);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/farmdelivery/cart.fxml"));
+//        Parent cartRoot = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/org/example/farmdelivery/cart.fxml")));
+          Parent cartRoot=loader.load();
+          CartController controller=loader.getController();
+          controller.getCartProducts();
+          Scene cartScene = new Scene(cartRoot);
 
         String cartCss = getClass().getResource("/org/example/farmdelivery/cart.css").toExternalForm();
         cartScene.getStylesheets().add(cartCss);
