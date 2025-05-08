@@ -13,7 +13,7 @@
 
 }
 .product-list-page .banner{
-    -fx-background-color: red;
+    -fx-background-color: linear-gradient(to bottom right, #a8e063, #56ab2f);
     -fx-padding: 20px;
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;

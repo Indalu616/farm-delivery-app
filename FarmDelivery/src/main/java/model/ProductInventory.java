@@ -7,20 +7,14 @@ import java.util.Arrays;
 public class ProductInventory {
     private final ArrayList<Product> productInventory=new ArrayList<>();
 
-    Product prod=new Product(1,"Cherry","Cherry is amazing",20,1, LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod1=new Product(2,"Tomato","Tomato is super sweet",21,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-
-    Product prod3=new Product(4,"Potato","Potato is amazing",28,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod4=new Product(5,"StrawBerry","Strawberry is amazing",40,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//    Product prod=new Product(1,"Cherry","Cherry is amazing",20,1, LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//    Product prod1=new Product(2,"Tomato","Tomato is super sweet",21,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//
+//    Product prod3=new Product(4,"Potato","Potato is amazing",28,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//    Product prod4=new Product(5,"StrawBerry","Strawberry is amazing",40,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
 
     public ProductInventory(){
         productInventory.clear();
-//        this.productInventory.add(prod);
-//        this.productInventory.add(prod1);
-//        this.productInventory.add(prod2);
-//        this.productInventory.add(prod3);
-//        this.productInventory.add(prod4);
-//        System.out.println("called");
         try(InputStream inputStream = getClass().getResourceAsStream("/files/products.txt");
             BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
         ){
@@ -73,6 +67,4 @@ public Product getProduct(int productId){
         }
         return null;
 }
-
-
 }
