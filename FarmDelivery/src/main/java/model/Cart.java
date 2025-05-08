@@ -53,8 +53,19 @@ public class Cart {
                     int prodId=Integer.parseInt(strArr[3]);
                     String imageUrl=strArr[4];
                     MyCartProduct myCartProduct=new MyCartProduct(prodName,imageUrl,prodQuantity,prodPrice,prodId);
-
-                    cartProducts.add(myCartProduct);
+                    boolean isAlreadyAdded=false;
+                    for(MyCartProduct prod:cartProducts){
+                        if(prod.getId()==prodId){
+                            prod.increaseQuantity();
+                            System.out.println("found");
+                            isAlreadyAdded=true;
+                            System.out.println(prod.getQuantity());
+                            break;
+                        }
+                    }
+                    if(!isAlreadyAdded){
+                        cartProducts.add(myCartProduct);
+                    }
                 }
             }
         }catch (IOException e){

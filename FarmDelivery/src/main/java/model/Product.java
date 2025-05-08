@@ -12,6 +12,7 @@ public class Product {
     private int quantityAvailable;
     private String imageUrl;
     private LocalDate harvestDate;
+    private String productCategory;
 
     public Product(int productId, String name, String description, int price, int quantityAvailable, LocalDate harvestDate,String imageUrl){
         this.productId = productId;

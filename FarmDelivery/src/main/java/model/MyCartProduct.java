@@ -19,7 +19,7 @@ public class MyCartProduct {
     }
 
     public int getPrice() {
-        return price;
+        return price*quantity;
     }
 
     public int getId() {
@@ -28,6 +28,9 @@ public class MyCartProduct {
 
     public int getQuantity() {
         return quantity;
+    }
+    public void increaseQuantity(){
+        this.quantity+=1;
     }
     public String getImgUrl() {
         return imgUrl;

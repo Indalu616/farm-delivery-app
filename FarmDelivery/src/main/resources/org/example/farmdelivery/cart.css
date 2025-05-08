@@ -37,6 +37,11 @@
     -fx-font-weight: bold;
     -fx-text-fill: #333;
 }
+.cart-page .grand-total{
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill:#555;
+}
 .cart-page .cart-summary{
     -fx-background-color: #f9f9f9;
     -fx-padding: 20px;

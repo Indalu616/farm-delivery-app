@@ -16,6 +16,7 @@ public class CartCard {
         productPrice.setText("Total Price: "+product.getPrice() + " AED");
         Image image=new Image(product.getImgUrl());
         productImage.setImage(image);
+        productQuantity.setText("Quantity: "+product.getQuantity());
         System.out.println("Product ID: "+product.getId());
     }
 }
