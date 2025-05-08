@@ -21,6 +21,9 @@
             <Label text="Description:" styleClass="decLabel"/>
             <TextArea fx:id="descriptionField" promptText="Enter product description" prefRowCount="3"/>
 
+            <Label text="Product Price:" styleClass="nameLabel"/>
+            <TextField fx:id="productPriceField" promptText="Enter product price"/>
+
             <Label text="Select Calendar:" styleClass="decLabel"/>
             <StackPane fx:id="imageCalendarUploadBox" alignment="CENTER_LEFT">
                 <Button fx:id="selectCalendar" text="Click to Select Date" onAction="#loadCalendarSelect"/>
@@ -31,7 +34,7 @@
 
             <ImageView fx:id="imagePreview" fitWidth="400" fitHeight="200" preserveRatio="true"/>
 
-            <Button fx:id="addBtn" text="Add Product" styleClass="addBtn"/>
+            <Button fx:id="addBtn" text="Add Product" onAction="#handleAddProduct" styleClass="addBtn"/>
 
             <padding><Insets top="20" left="20" right="20" bottom="20"/></padding>
         </VBox>

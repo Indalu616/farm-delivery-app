@@ -19,6 +19,9 @@ import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import model.ProductInventory;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.*;
@@ -48,14 +51,17 @@ public class ShoppingController {
 //        this.quantityAvailable = quantityAvailable;
 //        this.harvestDate = harvestDate;
 //        this.imageUrl=imageUrl;
-    Product prod=new Product(1,"Cherry","Cherry is amazing",20,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod1=new Product(2,"Tomato","Tomato is super sweet",21,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod2=new Product(3,"Avocado","Avocado is amazing",100,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod3=new Product(4,"Potato","Potato is amazing",28,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
-    Product prod4=new Product(5,"StrawBerry","Strawberry is amazing",40,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
 
 
+//        Product prod=new Product(1,"Cherry","Cherry is amazing",20,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//        Product prod1=new Product(2,"Tomato","Tomato is super sweet",21,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//        Product prod2=new Product(3,"Avocado","Avocado is amazing",100,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//        Product prod3=new Product(4,"Potato","Potato is amazing",28,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
+//        Product prod4=new Product(5,"StrawBerry","Strawberry is amazing",40,1,LocalDate.now(),"https://i.pinimg.com/736x/26/6c/82/266c82c35ea3e95a62a0ab7a46b55212.jpg");
     public void initialize() {
+        products = new ArrayList<>();
+        getProducts();
+
         productList.getChildren().clear();
         products= productInventory.getProductInventory();
 
@@ -96,8 +102,33 @@ public class ShoppingController {
 
     }
 
-    @FXML
+    private void getProducts(){
+        String path = "C:\\Users\\DELL\\Documents\\Programming-files\\Java\\farm-delivery-app\\FarmDelivery\\src\\main\\resources\\org\\example\\farmdelivery\\data\\products.txt";
 
+        try(BufferedReader Reader = new BufferedReader(new FileReader(path))){
+            String line;
+            while ((line = Reader.readLine()) != null) {
+                String[] productDetails = line.split(",");
+                int productId = Integer.parseInt(productDetails[0]);
+                String name = productDetails[1];
+                String description = productDetails[2];
+                double price = Double.parseDouble(productDetails[3]);
+                int quantityAvailable = Integer.parseInt(productDetails[4]);
+                LocalDate harvestDate = LocalDate.parse(productDetails[5]);
+                String imageUrl = productDetails[6];
+
+                Product product = new Product(productId, name, description, price, quantityAvailable, harvestDate,imageUrl);
+                searchedProducts.add(product);
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("Error reading file: " + e.getMessage());
+        }
+    }
+
+    @FXML
     public void handleAddItem(ActionEvent actionEvent) {
         // Add item logic here
     }

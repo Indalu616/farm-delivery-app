@@ -8,12 +8,12 @@ public class Product {
     private int productId;
     private String name;
     private String description;
-    private int price;
+    private double price;
     private int quantityAvailable;
     private String imageUrl;
     private LocalDate harvestDate;
 
-    public Product(int productId, String name, String description, int price, int quantityAvailable, LocalDate harvestDate,String imageUrl){
+    public Product(int productId, String name, String description, double price, int quantityAvailable, LocalDate harvestDate,String imageUrl){
         this.productId = productId;
         this.name = name;
         this.description = description;
@@ -44,7 +44,7 @@ public class Product {
         this.productId = productId;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
